@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="ImageEditToEditModeBehavior.EditImageWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+            xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+            xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            d:DesignHeight="300" d:DesignWidth="300" mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="dx:SimpleButton">
+            <Setter Property="GlyphHeight" Value="24"/>
+            <Setter Property="GlyphWidth" Value="24"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <StackPanel Margin="4">
+                <StackPanel Orientation="Horizontal" Margin="0,4">
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).UndoCommand'}" 
+                                     Glyph="{dx:DXImage 'SvgImages/Icon Builder/Actions_Undo.svg'}"
+                                     ToolTip="Undo"/>
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).RedoCommand'}" 
+                                     Glyph="{dx:DXImage 'SvgImages/Icon Builder/Actions_Redo.svg'}"
+                                     ToolTip="Redo"/>
+                </StackPanel>
+
+                <TextBlock Text="Mirror:" Margin="4,0,0,0"/>
+                <StackPanel Orientation="Horizontal">
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).MirrorHorizontallyCommand'}" 
+                                     Glyph="{dx:DXImage 'SvgImages/DiagramIcons/FlipImage_Horizontal.svg'}"
+                                     ToolTip="Mirror Horizontally"/>
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).MirrorVerticallyCommand'}"
+                                     Glyph="{dx:DXImage 'SvgImages/DiagramIcons/FlipImage_Vertical.svg'}"
+                                     ToolTip="Mirror Vertically"/>
+                </StackPanel>
+
+                <TextBlock Text="Rotate:" Margin="4,0,0,0"/>
+                <StackPanel Orientation="Horizontal">
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).RotateCommand'}" CommandParameter="90"
+                                     Glyph="{dx:DXImage 'SvgImages/DiagramIcons/Rotate_Right90.svg'}"
+                                     ToolTip="Rotate Clockwise"/>
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).RotateCommand'}" CommandParameter="-90"
+                                     Glyph="{dx:DXImage 'SvgImages/DiagramIcons/Rotate_Left90.svg'}"
+                                     ToolTip="Rotate Counterclockwise"/>
+                </StackPanel>
+
+                <TextBlock Text="Crop:" Margin="4,0,0,0"/>
+                <dx:SimpleButton Command="{DXBinding '@e(editBehavior).StartCropCommand'}" HorizontalAlignment="Left"
+                                 Glyph="{dx:DXImage 'SvgImages/DiagramIcons/Image_StretchMode.svg'}"
+                                 ToolTip="Crop"/>
+
+                <TextBlock Text="Zoom:" Margin="4,0,0,0"/>
+                <StackPanel Orientation="Horizontal">
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).ZoomCommand'}" CommandParameter="2" 
+                                     Glyph="{dx:DXImage 'SvgImages/DiagramIcons/ZoomIn.svg'}"
+                                     ToolTip="Zoom In"/>
+                    <dx:SimpleButton Command="{DXBinding '@e(editBehavior).ZoomCommand'}" CommandParameter="0.5"
+                                     Glyph="{dx:DXImage 'SvgImages/DiagramIcons/ZoomOut.svg'}"
+                                     ToolTip="Zoom Out"/>
+                </StackPanel>
+            </StackPanel>
+
+            <dx:ThemedWindowDialogButtonsControl HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <dx:ThemedWindowDialogButton Content="Save"
+                                             Glyph="{dx:DXImage 'SvgImages/DiagramIcons/save.svg'}"
+                                             IsEnabled="{DXBinding '@e(editBehavior).HasChanges'}"
+                                             DialogResult="OK"/>
+                <dx:ThemedWindowDialogButton Content="Cancel"
+                                             Glyph="{dx:DXImage 'SvgImages/HybridDemoIcons/BottomPanel/HybridDemo_Cancel.svg'}"
+                                             DialogResult="Cancel"/>
+            </dx:ThemedWindowDialogButtonsControl>
+        </Grid>
+
+        <dxe:ImageEdit Grid.Column="1" Margin="2"
+                       EditValue="{Binding Source, Mode=TwoWay}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxe:ImageEditToEditModeBehavior x:Name="editBehavior" CustomEditMenuItems="editBehavior_CustomEditMenuItems"/>
+            </dxmvvm:Interaction.Behaviors>
+        </dxe:ImageEdit>
+    </Grid>
+</UserControl>
