@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace />
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Images" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="23.2.*-*" />
+  </ItemGroup>
+</Project>
