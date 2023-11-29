@@ -78,7 +78,7 @@
         </Grid>
 
         <dxe:ImageEdit Grid.Column="1" Margin="2"
-                       EditValue="{Binding Source, Mode=TwoWay}">
+                       EditValue="{Binding Source, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <dxmvvm:Interaction.Behaviors>
                 <dxe:ImageEditToEditModeBehavior x:Name="editBehavior" CustomEditMenuItems="editBehavior_CustomEditMenuItems"/>
             </dxmvvm:Interaction.Behaviors>
