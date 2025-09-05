@@ -7,7 +7,7 @@
 
 # WPF ImageEdit - Edit Images in a Separate Window
 
-This example uses the [ImageEditToEditModeBehavior](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEditToEditModeBehavior?v=23.2) attached to the [ImageEdit](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEdit) to implement a standalone image editor that supports the following image modification options:
+This example uses the [ImageEditToEditModeBehavior](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEditToEditModeBehavior) attached to the [ImageEdit](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEdit) to implement a standalone image editor that supports the following image modification options:
 
 * Zoom
 * Pan
@@ -15,7 +15,7 @@ This example uses the [ImageEditToEditModeBehavior](https://docs.devexpress.com/
 * Rotate
 * Mirror
 
-![Image](https://docs.devexpress.com/WPF/images/ImageEditToEditModeBehavior_CustomButtons.png?v=23.2)
+![Image](https://docs.devexpress.com/WPF/images/ImageEditToEditModeBehavior_CustomButtons.png)
 
 ## Files to Review
 
@@ -26,7 +26,7 @@ This example uses the [ImageEditToEditModeBehavior](https://docs.devexpress.com/
 
 ## Documentation
 
-- [ImageEditToEditModeBehavior](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEditToEditModeBehavior?v=23.2)
+- [ImageEditToEditModeBehavior](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEditToEditModeBehavior)
 - [ImageEdit](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEdit)
 - [DialogService](https://docs.devexpress.com/WPF/17467/mvvm-framework/services/predefined-set/dialog-services/dialogservice)
 <!-- feedback -->
@@ -36,3 +36,4 @@ This example uses the [ImageEditToEditModeBehavior](https://docs.devexpress.com/
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
