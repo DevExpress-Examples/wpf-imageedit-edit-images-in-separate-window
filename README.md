@@ -30,7 +30,7 @@ This example uses the [ImageEditToEditModeBehavior](https://docs.devexpress.com/
 - [ImageEdit](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ImageEdit)
 - [DialogService](https://docs.devexpress.com/WPF/17467/mvvm-framework/services/predefined-set/dialog-services/dialogservice)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-imageedit-edit-images-in-separate-window&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-imageedit-edit-images-in-separate-window&~~~was_helpful=no)
 
